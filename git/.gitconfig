@@ -1,7 +1,6 @@
 [user]
 	name = Alberto
 	email = alberto@aramirez.es
-	name = Alberto
 [alias]
         st = status --short
         hist = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
