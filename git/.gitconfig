@@ -1,0 +1,22 @@
+[user]
+	name = Alberto
+	email = alberto@aramirez.es
+	name = Alberto
+[alias]
+        st = status --short
+        hist = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        ls = log --pretty=format:\"%C(yellow)%h\\ %C(green)%ad%C(red)%d\\ %C(reset)%s%C(blue)\\ <%cn>\" --decorate --date=iso
+        c = config --global
+        la = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+        alias = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+        co = checkout
+	cb = checkout -b
+        ci = commit
+        cim = commit -m
+        br = branch
+	fe = fetch
+ 
+[color]
+        ui = true
+[core]
+	excludesfile = /Users/alberto.ramirez/.gitignore_global
