@@ -20,3 +20,5 @@
         ui = true
 [core]
 	excludesfile = /Users/alberto.ramirez/.gitignore_global
+[commit]
+	gpgsign = true
