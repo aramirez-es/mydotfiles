@@ -29,7 +29,8 @@ zstyle ':completion:*' group-name ''
 gclone() {
     repo=${1#(git@|https://)}
     repo=${repo%".git"}
-    repo="${repo/://}"
+    repo=${repo#*:}
+    repo=${repo#*/}
     take "${HOME}/code/$repo"
     git clone $1 ${PWD} || git pull origin master
 }
