@@ -38,6 +38,7 @@ gclone() {
     git clone $1 ${PWD} || git pull origin master
 }
 
+[ -f $HOME/.personal-env.sh ] && source $HOME/.personal-env.sh
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
