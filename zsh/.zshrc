@@ -4,7 +4,10 @@ export GOPATH=$HOME/gocode
 export PATH=$GOPATH/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/alberto.ramirez/.oh-my-zsh
+export ZSH=/Users/albertoramirez/.oh-my-zsh
+
+# Ignore duplicated history entries
+setopt histignoredups
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="aramirez"
@@ -28,9 +31,18 @@ export EDITOR='vim'
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' group-name ''
 
-[ -f /Users/alberto.ramirez/.travis/travis.sh ] && source /Users/alberto.ramirez/.travis/travis.sh
+# Aliases
+gclone() {
+    repo=${1#(git@|https://)}
+    repo=${repo%".git"}
+    repo=${repo#*:}
+    repo=${repo#*/}
+    take "${HOME}/code/$repo"
+    git clone $1 ${PWD} || git pull origin master
+}
+
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-[ -f /Users/alberto.ramirez/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && . /Users/alberto.ramirez/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+[ -f /Users/albertoramirez/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && . /Users/albertoramirez/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 [ -f /usr/local/share/zsh/site-functions/_awless ] && . /usr/local/share/zsh/site-functions/_awless
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

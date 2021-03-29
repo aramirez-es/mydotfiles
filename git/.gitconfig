@@ -11,14 +11,16 @@
         alias = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
         co = checkout
 	cb = checkout -b
-        ci = commit
-        cim = commit -m
+        ci = commit -s
+        cim = commit -s -m
         br = branch
 	fe = fetch
  
 [color]
         ui = true
 [core]
-	excludesfile = /Users/alberto.ramirez/.gitignore_global
+	excludesfile = /Users/albertoramirez/.gitignore_global
+[init]
+	templatedir = ~/.git-templates
 [commit]
 	gpgsign = true
