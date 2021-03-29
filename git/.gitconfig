@@ -9,12 +9,21 @@
         c = config --global
         la = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
         alias = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
-        co = checkout
-	cb = checkout -b
+
+	co = switch
+	cb = switch --create
+	sc = switch --create
+	br = branch
+
+	r = restore
+
         ci = commit -s
         cim = commit -s -m
-        br = branch
 	fe = fetch
+
+	# Remove branches that have already been merged with master
+	# a.k.a. ‘delete merged’
+        dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
  
 [color]
         ui = true
@@ -24,3 +33,7 @@
 	templatedir = ~/.git-templates
 [commit]
 	gpgsign = true
+[status]
+	showUntrackedFiles = all
+[fetch]
+	prune = true
