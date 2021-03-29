@@ -16,7 +16,7 @@ ZSH_THEME="aramirez"
 
 HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(git you-should-use)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
